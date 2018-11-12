@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  targetNamespace="http://localhost/pingpong"
+                  xmlns:ns="http://localhost/pingpong"
+                  xmlns:tns="http://localhost/pingpong/types"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xs:schema targetNamespace="http://localhost/pingpong/types">
+            <xs:element name="ping">
+                <xs:complexType />
+            </xs:element>
+            <xs:element name="pong">
+                <xs:complexType />
+            </xs:element>
+            <xs:element name="fault">
+                <xs:complexType />
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="ping">
+        <wsdl:part name="param" element="tns:ping" />
+    </wsdl:message>
+    <wsdl:message name="pong">
+        <wsdl:part name="param" element="tns:pong" />
+    </wsdl:message>
+    <wsdl:message name="fault">
+        <wsdl:part name="param" element="tns:fault" />
+    </wsdl:message>
+    <wsdl:portType name="PingPong_portType">
+        <wsdl:operation name="PingPong">
+            <wsdl:input name="Ping Message" message="ns:ping" />
+            <wsdl:output name="Pong Message" message="ns:pong" />
+            <wsdl:fault name="Fault Message" message="ns:fault" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PingPong_binding" type="ns:PingPong_portType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="PingPong">
+            <soap:operation soapAction="urn:PingPong" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault>
+                <soap:body use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PingPongService">
+        <wsdl:port name="PingPongPort" binding="ns:PingPong_binding">
+            <soap:address location="http://localhost:8999" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

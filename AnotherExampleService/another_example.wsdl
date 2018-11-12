@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  targetNamespace="http://localhost/pingpong"
+                  xmlns:ns="http://localhost/pingpong"
+                  xmlns:tns="http://localhost/pingpong/types"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xs:schema targetNamespace="http://localhost/pingpong/types">
+            <xs:element name="GetLocalities">
+                <xs:complexType />
+            </xs:element>
+            <xs:element name="GetPersonsFromLocality">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Locality" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetNrPersonsFromLocality">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Locality" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Localities">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Locality" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Persons">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Person" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="NrPersons" type="xs:int" />
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="GetLocalities">
+        <wsdl:part name="param" element="tns:GetLocalities" />
+    </wsdl:message>
+    <wsdl:message name="Localities">
+        <wsdl:part name="param" element="tns:Localities" />
+    </wsdl:message>
+    <wsdl:message name="GetPersonsFromLocality">
+        <wsdl:part name="param" element="tns:GetPersonsFromLocality" />
+    </wsdl:message>
+    <wsdl:message name="Persons">
+        <wsdl:part name="param" element="tns:Persons" />
+    </wsdl:message>
+    <wsdl:message name="GetNrPersonsFromLocality">
+        <wsdl:part name="param" element="tns:GetNrPersonsFromLocality" />
+    </wsdl:message>
+    <wsdl:message name="NrPersons">
+        <wsdl:part name="param" element="tns:NrPersons" />
+    </wsdl:message>
+    <wsdl:portType name="another_portType">
+        <wsdl:operation name="GetLocalities">
+            <wsdl:input name="GetLocalities" message="ns:GetLocalities" />
+            <wsdl:output name="Localities" message="ns:Localities" />
+        </wsdl:operation>
+        <wsdl:operation name="GetPersonsFromLocality">
+            <wsdl:input name="GetPersonsFromLocality" message="ns:GetPersonsFromLocality" />
+            <wsdl:output name="Persons" message="ns:Persons" />
+        </wsdl:operation>
+        <wsdl:operation name="GetNrPersonsFromLocality">
+            <wsdl:input name="GetNrPersonsFromLocality" message="ns:GetNrPersonsFromLocality" />
+            <wsdl:output name="NrPersons" message="ns:NrPersons" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="another_binding" type="ns:another_portType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetLocalities">
+            <soap:operation soapAction="urn:GetLocalities" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetPersonsFromLocality">
+            <soap:operation soapAction="urn:GetPersonsFromLocality" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetNrPersonsFromLocality">
+            <soap:operation soapAction="urn:GetNrPersonsFromLocality" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AnotherExampleService">
+        <wsdl:port name="AnotherPort" binding="ns:another_binding">
+            <soap:address location="http://localhost:8000" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
