@@ -2,8 +2,8 @@
 Examples of SOAP PHP Servers and Clients
 
 ## SOAP Services ##
-1. _PingPong_ - very first service, on Ping request Pong response
-2. _Arithmetic_ - service that realize __Sum__ and __Product__ of two integers.
-3. _AnotherExample_ - yet another service, two methods: __GetLocalities__ returns list of localities, 
-__GetPersonsFromLocality__ - list of persons from specified locality, __GetNrPersonsFromLocality__ returns nr. of persons
+1. __PingPong__ - very first service, on _Ping_ request Pong response
+2. __Arithmetic__ - service that realize _Sum_ and _Product_ of two integers.
+3. __AnotherExample__ - yet another service, two methods: _GetLocalities_ returns list of localities, 
+_GetPersonsFromLocality_ - list of persons from specified locality, _GetNrPersonsFromLocality_ returns nr. of persons
 from this locality
