@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  targetNamespace="http://localhost/pingpong"
+                  xmlns:ns="http://localhost/pingpong"
+                  xmlns:tns="http://localhost/pingpong/types"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UTOverTransport">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient"/>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema targetNamespace="http://localhost/pingpong/types">
+            <xs:element name="Sum">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="x" type="xs:int" />
+                        <xs:element name="y" type="xs:int" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Product">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="x" type="xs:int" />
+                        <xs:element name="y" type="xs:int" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Result" type="xs:int" />
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="Sum">
+        <wsdl:part name="param" element="tns:Sum" />
+    </wsdl:message>
+    <wsdl:message name="Product">
+        <wsdl:part name="param" element="tns:Product" />
+    </wsdl:message>
+    <wsdl:message name="Result">
+        <wsdl:part name="param" element="tns:Result" />
+    </wsdl:message>
+    <wsdl:portType name="Arithmetic_portType">
+        <wsdl:operation name="Sum">
+            <wsdl:input name="Sum" message="ns:Sum" />
+            <wsdl:output name="Result" message="ns:Result" />
+        </wsdl:operation>
+        <wsdl:operation name="Product">
+            <wsdl:input name="Product" message="ns:Product" />
+            <wsdl:output name="Result" message="ns:Result" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="Arithmetic_binding" type="ns:Arithmetic_portType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Sum">
+            <soap:operation soapAction="urn:Sum" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Product">
+            <soap:operation soapAction="urn:Product" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ArithmeticService">
+        <wsdl:port name="ArithmeticPort" binding="ns:Arithmetic_binding">
+            <soap:address location="http://localhost:8000" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
