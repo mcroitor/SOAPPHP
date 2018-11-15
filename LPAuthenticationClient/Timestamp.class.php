@@ -13,12 +13,16 @@ class Timestamp implements Token {
     public function GetSoapVar() {
         $time = time();
         $created = gmdate('Y-m-d\TH:i:s\Z', $time);
-        $expires = gmdate('Y-m-d\TH:i:s\Z', $time + $this->live * 1000);
+        $expires = gmdate('Y-m-d\TH:i:s\Z', $time + $this->live);
         $token = [
-            "Created" => new SoapVar($created, SOAP_ENC_OBJECT, "Created", Timestamp::WSU_NS),
-            "Expires" => new SoapVar($expires, SOAP_ENC_OBJECT, "Expires", Timestamp::WSU_NS)
+            new SoapVar($created, XSD_DATETIME, null, null, "Created", Timestamp::WSU_NS),
+            new SoapVar($expires, XSD_DATETIME, null, null, "Expires", Timestamp::WSU_NS)
         ];
-        return new SoapVar($token, SOAP_ENC_OBJECT, "Timestamp", Timestamp::WSU_NS);
+        return new SoapVar($token, SOAP_ENC_OBJECT, null, null, $this->GetName(), Timestamp::WSU_NS);
+    }
+
+    public function GetName() {
+        return "Timestamp";
     }
 
 }

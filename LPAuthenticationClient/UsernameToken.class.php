@@ -13,15 +13,21 @@ class UsernameToken implements Token {
     }
 
     public function GetSoapVar() {
-        $timestamp = gmdate('Y-m-d\TH:i:s\Z');
+        $time = time();
+        $created = gmdate('Y-m-d\TH:i:s\Z', $time);
         $nonce = mt_rand();
         $token = [
-            "Username" => $this->username,
-            "Password" => $this->password,
-            "Nonce" => base64_encode(pack("H*", $nonce)),
-            "Created" => new SoapVar($timestamp, SOAP_ENC_OBJECT, "Created", UsernameToken::WSU_NS)
+            new SoapVar($this->username, XSD_STRING, null, null, "Username", UsernameToken::WSSE_NS),
+            new SoapVar($this->password, XSD_STRING, null, null, "Password", UsernameToken::WSSE_NS),
+            new SoapVar(base64_encode(pack("H*", $nonce)), XSD_BASE64BINARY, null, null, "Nonce", UsernameToken::WSSE_NS),
+            new SoapVar($created, XSD_DATETIME, null, null, "Created", UsernameToken::WSU_NS)
         ];
-        return new SoapVar($token, SOAP_ENC_OBJECT, "UsernameToken", UsernameToken::WSSE_NS);
+        
+        return new SoapVar($token, SOAP_ENC_OBJECT, null, null, $this->GetName(), UsernameToken::WSSE_NS);
+    }
+
+    public function GetName() {
+        return "UsernameToken";
     }
 
 }
