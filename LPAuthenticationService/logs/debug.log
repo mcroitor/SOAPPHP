@@ -1,0 +1,64 @@
+[2018-11-15T13:19:39Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header><ns2:Security><BOGUS xsi:type="ns2:UsernameToken"><ns2:Username>root</ns2:Username><ns2:Password>password</ns2:Password><ns2:Nonce>R0ZTQ0pvTT0=</ns2:Nonce><ns3:Created>2018-11-15T13:19:39Z</ns3:Created></BOGUS><ns3:Timestamp><ns3:Created>2018-11-15T13:19:39Z</ns3:Created><ns3:Expires>2018-11-15T13:20:39Z</ns3:Expires></ns3:Timestamp></ns2:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:19:39Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:24:20Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:24:20Z</ns2:Created><ns2:Expires>2018-11-15T13:25:20Z</ns2:Expires></ns2:Timestamp><BOGUS xsi:type="ns3:UsernameToken"><ns3:Username>root</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>SndVbmdpQT0=</ns3:Nonce><ns2:Created>2018-11-15T13:24:20Z</ns2:Created></BOGUS></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:24:20Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:25:11Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:25:11Z</ns2:Created><ns2:Expires>2018-11-15T13:26:11Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>root</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>RjVRWEJwVT0=</ns3:Nonce><ns2:Created>2018-11-15T13:25:11Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:25:11Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:26:44Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:26:44Z</ns2:Created><ns2:Expires>2018-11-15T13:27:44Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>root</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>SUJhV2hVQT0=</ns3:Nonce><ns2:Created>2018-11-15T13:26:44Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:26:44Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:27:01Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:27:01Z</ns2:Created><ns2:Expires>2018-11-15T13:28:01Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>root</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>YzFBMWtYQT0=</ns3:Nonce><ns2:Created>2018-11-15T13:27:01Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:27:01Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:27:11Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:27:11Z</ns2:Created><ns2:Expires>2018-11-15T13:28:11Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>user</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>RkFRR2FYWT0=</ns3:Nonce><ns2:Created>2018-11-15T13:27:11Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:27:11Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:27:46Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:27:46Z</ns2:Created><ns2:Expires>2018-11-15T13:28:46Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>user</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>RTFaWGxJVT0=</ns3:Nonce><ns2:Created>2018-11-15T13:27:46Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:27:46Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
+[2018-11-15T13:27:54Z]: request: <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/arithmetic/types" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><SOAP-ENV:Header><ns3:Security><ns2:Timestamp><ns2:Created>2018-11-15T13:27:54Z</ns2:Created><ns2:Expires>2018-11-15T13:28:54Z</ns2:Expires></ns2:Timestamp><ns3:UsernameToken><ns3:Username>user</ns3:Username><ns3:Password>password</ns3:Password><ns3:Nonce>R0RrVGtWZz0=</ns3:Nonce><ns2:Created>2018-11-15T13:27:54Z</ns2:Created></ns3:UsernameToken></ns3:Security></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Sum><x>5</x><y>6</y></ns1:Sum></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+[2018-11-15T13:27:54Z]: headers: DOMNodeList Object
+(
+    [length] => 1
+)
+
