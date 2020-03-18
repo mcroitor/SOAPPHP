@@ -8,5 +8,5 @@ Examples of SOAP PHP Servers and Clients
 _GetPersonsFromLocality_ - list of persons from specified locality, _GetNrPersonsFromLocality_ returns nr. of persons
 from this locality
 4. __mconnect__ - samples for MConnect integration
-  * __unsecured__ - unsecured sample, two projects, client and service.
-  * __secured__ - secured with certificate sample, client and sample.
+    * __unsecured__ - unsecured sample, two projects, client and service.
+    * __secured__ - secured with certificate sample, client and sample.
