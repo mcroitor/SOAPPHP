@@ -1,6 +1,6 @@
 <?php
 
-class MConnectClient extends SoapClient {
+class SecuredSoapClient extends SoapClient {
 
     private $headers = [];
     public $private_key;
@@ -13,7 +13,7 @@ class MConnectClient extends SoapClient {
         parent::__construct($wsdl, $options);
     }
 
-    public function SetMConnectHeaders($headers) {
+    public function SetHeaders($headers) {
         if (is_array($headers)) {
             $this->headers = array_merge($this->headers, $headers);
         } else {

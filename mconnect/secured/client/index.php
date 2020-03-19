@@ -11,13 +11,13 @@ $headers = [
     "CallReason" => "testare"   // Scopul apelului
 ];
 
-$client = new MConnectClient($wsdl, []);
+$client = new SecuredSoapClient($wsdl, []);
 $client->private_key = "./cert/client.p12";
 $client->passphrase = "123456";
 $client->public_key = "./cert/client_certificate.pem";
 $client->trusted_key = "./cert/service_certificate.pem";
 
-$client->SetMConnectHeaders((new MConnectHeaders($headers))->GetSoapHeaders());
+$client->SetHeaders((new MConnectHeaders($headers))->GetSoapHeaders());
 
 try {
     echo $client->GetData(["Left" => 15, "Right" => 16])->Result;
