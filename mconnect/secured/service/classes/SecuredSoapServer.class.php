@@ -1,6 +1,6 @@
 <?php
 
-class MConnectServer extends SoapServer {
+class SecuredSoapServer extends SoapServer {
 
     // for validating requests
     var $trusted_key; // cer
